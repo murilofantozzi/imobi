@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/core';
 
+
 export default function HomeAdm() {
 
     const navigation = useNavigation();
@@ -17,6 +18,10 @@ export default function HomeAdm() {
 
     function irRelatorio() {
         navigation.navigate('Relatorio')
+    }
+
+    function irBusca() {
+        navigation.navigate('Busca')
     }
 
 
@@ -40,7 +45,7 @@ export default function HomeAdm() {
                 </TouchableOpacity>
 
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={irBusca}>
                     <Icon name="search" size={100} color="#1E90FF" />
                     <Text style={styles.subtitulos}>Busca de imobilizado</Text>
                 </TouchableOpacity>
@@ -105,3 +110,4 @@ const styles = StyleSheet.create({
 
 
 });
+
