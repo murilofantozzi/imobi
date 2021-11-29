@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import { useNavigation } from '@react-navigation/core';
 import styles from '../Estilos/styles.js';
 
-export default function Cad_user() {
+export default function Busca() {
 
     const [text, onChangeText] = React.useState(null);
     const [email, onChangeEmail] = React.useState(null);
@@ -17,35 +17,20 @@ export default function Cad_user() {
         <View style={styles.container}>
 
             <Text style={styles.titulos}>
-                Cadastro de usuário.
+                Buscar imobilizado
             </Text>
 
             <TextInput
                 style={styles.input}
-                placeholder="Nome completo"
+                placeholder="Digite um imobilizado"
                 keyboardType="text"
                 onChangeText={onChangeText}
                 value={text}
             />
 
-            <TextInput
-                style={styles.input}
-                placeholder="E-mail"
-                keyboardType="email-address"
-                onChangeText={onChangeEmail}
-                value={email}
-            />
-
-            <TextInput
-                style={styles.input}
-                placeholder="Cargo"
-                keyboardType="email-address"
-                onChangeText={onChangeEmail}
-                value={email}
-            />
 
             <TouchableOpacity style={styles.button} onPress={irHomeAdm}>
-                <Text style={styles.escbutton}>Cadastrar</Text>
+                <Text style={styles.escbutton}>Buscar</Text>
             </TouchableOpacity>
 
 

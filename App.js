@@ -7,6 +7,9 @@ import HomeAdm from './src/pages/HomeAdm';
 import Cad_user from './src/pages/Cad_user';
 import Cad_imob from './src/pages/Cad_imob';
 import Relatorio from './src/pages/Relatorio';
+import Busca from './src/pages/Busca';
+import Rec_senha from './src/pages/Rec_senha';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -20,6 +23,8 @@ export default function App() {
         <Stack.Screen name="Cad_user" component={Cad_user} />
         <Stack.Screen name="Cad_imob" component={Cad_imob} />
         <Stack.Screen name="Relatorio" component={Relatorio} />
+        <Stack.Screen name="Busca" component={Busca} />
+        <Stack.Screen name="Rec_senha" component={Rec_senha} />
       </Stack.Navigator>
     </NavigationContainer>
   );

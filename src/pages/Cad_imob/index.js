@@ -1,12 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
+import styles from '../Estilos/styles.js';
 
 
 export default function Cad_user() {
 
     const [text, onChangeText] = React.useState(null);
-    const [password, onChangePassword] = React.useState(null);
+    const [email, onChangeEmail] = React.useState(null);
     const navigation = useNavigation();
 
     function irHomeAdm() {
@@ -14,68 +15,77 @@ export default function Cad_user() {
     }
 
     return (
-        <View style={styles.container}>
 
-            <Text style={styles.titulos}>
-                Cadastro de imobilizado.
-            </Text>
+        <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.container}
+            keyboardVerticalOffset={20}
+        /*Rolar a tela conforme o formulario*/
+        >
+            <ScrollView style={{ width: "100%" }}>
+                <View style={styles.container}>
 
-            <TextInput
-                style={styles.input}
-                placeholder="E-mail"
-                keyboardType="email-address"
-                onChangeText={onChangeText}
-                value={text}
-            />
+                    <Text style={styles.titulos}>
+                        Cadastro de imobilizado.
+                    </Text>
 
-            <TouchableOpacity style={styles.button} onPress={irHomeAdm}>
-                <Text>Cadastrar</Text>
-            </TouchableOpacity>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Descrição"
+                        keyboardType="text"
+                        onChangeText={onChangeText}
+                        value={text}
+                    />
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Numero imobilizado"
+                        keyboardType="text"
+                        onChangeText={onChangeText}
+                        value={text}
+                    />
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Valor estimado"
+                        keyboardType="text"
+                        onChangeText={onChangeText}
+                        value={text}
+                    />
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Status"
+                        keyboardType="text"
+                        onChangeText={onChangeText}
+                        value={text}
+                    />
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Atribuido à"
+                        keyboardType="text"
+                        onChangeText={onChangeText}
+                        value={text}
+                    />
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Teste"
+                        keyboardType="text"
+                        onChangeText={onChangeText}
+                        value={text}
+                    />
 
 
-        </View>
+                    <TouchableOpacity style={styles.button} onPress={irHomeAdm}>
+                        <Text style={styles.escbutton}>Cadastrar</Text>
+                    </TouchableOpacity>
+
+
+                </View>
+            </ScrollView>
+        </KeyboardAvoidingView>
     );
 
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    titulos: {
-        fontSize: 30,
-        color: '#1E90FF',
-        marginBottom: 50,
-    },
-
-    subtitulo: {
-        fontSize: 20,
-        color: '#1E90FF',
-        marginBottom: 50,
-    },
-
-    input: {
-        width: 250,
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-        borderColor: '#1E90FF',
-        borderRadius: 10,
-        marginBottom: 20,
-    },
-
-    button: {
-        alignItems: "center",
-        backgroundColor: "#1E90FF",
-        padding: 10,
-        borderRadius: 10,
-        width: 250,
-        marginTop: 10,
-        marginBottom: 20,
-
-    },
-});
